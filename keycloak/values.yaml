@@ -1,4 +1,4 @@
 ingress:
   enabled: true
   rules:
-    host: keycloak.127.0.0.1.nip.io
+    - host: keycloak.127.0.0.1.nip.io
