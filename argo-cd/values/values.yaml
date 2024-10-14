@@ -1,18 +1,17 @@
 createClusterRoles: true
 
-argocd:
-  server:
-    ingress:
-      enabled: true
-      host: argocd.127.0.0.1.nip.io
-      ingressClassName: "nginx"
-      controller: "generic"
+server:
+  ingress:
+    enabled: true
+    host: argocd.127.0.0.1.nip.io
+    ingressClassName: "nginx"
+    controller: "generic"
+cm:
+  url: "https://argocd.127.0.0.1.nip.io"
+configs:
   cm:
-    url: "https://argocd.127.0.0.1.nip.io"
-  configs:
-    cm:
-      clusterCredentials:
-        namespaces: ""
+    clusterCredentials:
+      namespaces: ""
 
 dex:
   enabled: false
