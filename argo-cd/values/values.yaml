@@ -6,6 +6,9 @@ server:
     hostname: argocd.127.0.0.1.nip.io
     ingressClassName: "nginx"
     controller: "generic"
+    annotations:
+      nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
+      nginx.ingress.kubernetes.io/backend-protocol: "HTTP"
 cm:
   url: "https://argocd.127.0.0.1.nip.io"
 configs:
