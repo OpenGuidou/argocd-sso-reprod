@@ -10,6 +10,7 @@ spec:
       ref: git-repo
     - chart: external-secrets
       repoURL: https://charts.external-secrets.io
+      targetRevision: "0.10.14"
       helm:
         valueFiles:
           - $git-repo/eso/values.yaml    

@@ -10,6 +10,7 @@ spec:
       ref: git-repo
     - chart: keycloak
       repoURL: oci://registry-1.docker.io/bitnamicharts/keycloak
+      targetRevision: "24.0.0"
       helm:
         valueFiles:
           - $git-repo/keycloak/values.yaml    
