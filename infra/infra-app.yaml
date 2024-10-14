@@ -6,7 +6,6 @@ spec:
   project: default
   sources:
     - repoURL: 'https://github.com/OpenGuidou/argocd-sso-reprod.git'
-      path: infra
       targetRevision: HEAD
       ref: infra
     - chart: ingress-nginx
