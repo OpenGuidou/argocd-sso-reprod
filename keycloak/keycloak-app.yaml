@@ -9,8 +9,8 @@ spec:
       targetRevision: HEAD
       ref: git-repo
     - chart: keycloak
-      repoURL: registry-1.docker.io/bitnamicharts/keycloak
-      targetRevision: "24.0.0"
+      repoURL: https://codecentric.github.io/helm-charts
+      targetRevision: "2.5.1"
       helm:
         valueFiles:
           - $git-repo/keycloak/values.yaml    
