@@ -6,6 +6,6 @@ ingress:
       paths:
         - path: /
           pathType: Prefixtls:
-      tls:  
-        - hosts:
-           - keycloak.127.0.0.1.nip.io
+  tls:  
+    - hosts:
+        - keycloak.127.0.0.1.nip.io
