@@ -1,0 +1,22 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: keycloak
+spec:
+  project: default
+  sources:
+    - repoURL: 'https://github.com/OpenGuidou/argocd-sso-reprod.git'
+      targetRevision: HEAD
+      ref: git-repo
+    - chart: keycloak
+      repoURL: oci://registry-1.docker.io/bitnamicharts/keycloak
+      helm:
+        valueFiles:
+          - $git-repo/keycloak/values.yaml    
+  destination:
+    server: 'https://kubernetes.default.svc'
+    namespace: argocd
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true

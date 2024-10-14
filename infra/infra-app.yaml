@@ -1,0 +1,30 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: infra
+spec:
+  project: default
+  sources:
+    - repoURL: 'https://github.com/OpenGuidou/argocd-sso-reprod.git'
+      path: infra
+      targetRevision: HEAD
+      ref: infra
+    - chart: ingress-nginx
+      targetRevision: 4.5.2
+      repoURL: https://kubernetes.github.io/ingress-nginx
+      helm:
+        valueFiles:
+          - $infra/infra/values-ingress-controller.yaml
+    - chart: docker-registry
+      targetRevision: 2.2.2
+      repoURL: https://helm.twun.io
+      helm:
+        valueFiles:
+          - $infra/infra/values-docker-registry.yaml
+  destination:
+    server: 'https://kubernetes.default.svc'
+    namespace: infra
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
