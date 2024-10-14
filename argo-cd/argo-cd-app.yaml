@@ -12,6 +12,7 @@ spec:
       repoURL: https://argoproj.github.io/argo-helm
       targetRevision: 7.6.8
       helm:
+        releaseName: argocd
         valueFiles: 
           - $git-repo/argo-cd/values/values.yaml
   destination:
