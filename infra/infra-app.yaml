@@ -23,7 +23,7 @@ spec:
           - $infra/infra/values-docker-registry.yaml
   destination:
     server: 'https://kubernetes.default.svc'
-    namespace: infra
+    namespace: argocd
   syncPolicy:
     automated:
       prune: true
