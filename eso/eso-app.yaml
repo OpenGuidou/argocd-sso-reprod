@@ -13,7 +13,7 @@ spec:
       targetRevision: "0.10.4"
       helm:
         valueFiles:
-          - $git-repo/eso/values.yaml    
+          - $git-repo/eso/values/values.yaml    
   destination:
     server: 'https://kubernetes.default.svc'
     namespace: argocd
