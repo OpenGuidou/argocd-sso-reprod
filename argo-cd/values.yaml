@@ -1,3 +1,5 @@
+createClusterRoles: false
+
 argocd:
   server:
     ingress:
