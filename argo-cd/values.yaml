@@ -1,4 +1,4 @@
-createClusterRoles: false
+createClusterRoles: true
 
 argocd:
   server:
@@ -10,7 +10,7 @@ argocd:
   configs:
     cm:
       clusterCredentials:
-        namespaces: "argocd"
+        namespaces: "*"
 
 dex:
   enabled: false
