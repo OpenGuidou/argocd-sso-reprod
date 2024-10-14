@@ -4,3 +4,7 @@ argocd:
       host: argocd.127.0.0.1.nip.io
   cm:
     url: "https://argocd.127.0.0.1.nip.io"
+  configs:
+    cm:
+      clusterCredentials:
+        namespaces: "argocd,infra"
