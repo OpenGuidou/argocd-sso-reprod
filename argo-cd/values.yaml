@@ -10,7 +10,7 @@ argocd:
   configs:
     cm:
       clusterCredentials:
-        namespaces: "argocd,infra"
+        namespaces: "argocd"
 
 dex:
   enabled: false
