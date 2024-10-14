@@ -2,3 +2,7 @@ ingress:
   enabled: true
   rules:
     - host: keycloak.127.0.0.1.nip.io
+      # Paths for the host
+      paths:
+        - path: /
+          pathType: Prefix
